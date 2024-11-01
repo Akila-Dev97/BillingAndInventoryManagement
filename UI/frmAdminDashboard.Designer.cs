@@ -37,7 +37,7 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsers = new System.Windows.Forms.Label();
-            this.lblLoggedInUser = new System.Windows.Forms.Label();
+            this.lblAdminLoggedIn = new System.Windows.Forms.Label();
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblAppLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
@@ -86,6 +86,7 @@
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(63, 25);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // categoryToolStripMenuItem
             // 
@@ -121,16 +122,15 @@
             this.lblUsers.TabIndex = 2;
             this.lblUsers.Text = "User :";
             // 
-            // lblLoggedInUser
+            // lblAdminLoggedIn
             // 
-            this.lblLoggedInUser.AutoSize = true;
-            this.lblLoggedInUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedInUser.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(79, 53);
-            this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(51, 23);
-            this.lblLoggedInUser.TabIndex = 3;
-            this.lblLoggedInUser.Text = "Akila";
+            this.lblAdminLoggedIn.AutoSize = true;
+            this.lblAdminLoggedIn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminLoggedIn.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblAdminLoggedIn.Location = new System.Drawing.Point(79, 53);
+            this.lblAdminLoggedIn.Name = "lblAdminLoggedIn";
+            this.lblAdminLoggedIn.Size = new System.Drawing.Size(0, 23);
+            this.lblAdminLoggedIn.TabIndex = 3;
             // 
             // lblAppFName
             // 
@@ -138,7 +138,7 @@
             this.lblAppFName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppFName.Location = new System.Drawing.Point(882, 453);
             this.lblAppFName.Name = "lblAppFName";
-            this.lblAppFName.Size = new System.Drawing.Size(86, 46);
+            this.lblAppFName.Size = new System.Drawing.Size(84, 45);
             this.lblAppFName.TabIndex = 4;
             this.lblAppFName.Text = "ANY";
             // 
@@ -148,7 +148,7 @@
             this.lblAppLName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppLName.Location = new System.Drawing.Point(959, 453);
             this.lblAppLName.Name = "lblAppLName";
-            this.lblAppLName.Size = new System.Drawing.Size(124, 46);
+            this.lblAppLName.Size = new System.Drawing.Size(122, 45);
             this.lblAppLName.TabIndex = 5;
             this.lblAppLName.Text = "STORE";
             // 
@@ -171,7 +171,7 @@
             this.Controls.Add(this.lblSHead);
             this.Controls.Add(this.lblAppLName);
             this.Controls.Add(this.lblAppFName);
-            this.Controls.Add(this.lblLoggedInUser);
+            this.Controls.Add(this.lblAdminLoggedIn);
             this.Controls.Add(this.lblUsers);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.menuStripTop);
@@ -180,6 +180,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Admin Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashboard_FormClosed);
             this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
@@ -201,7 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transactionsToolStripMenuItem;
         private System.Windows.Forms.Label lblUsers;
-        private System.Windows.Forms.Label lblLoggedInUser;
+        private System.Windows.Forms.Label lblAdminLoggedIn;
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Label lblAppLName;
         private System.Windows.Forms.Label lblSHead;

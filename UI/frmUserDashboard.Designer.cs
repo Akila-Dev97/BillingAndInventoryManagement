@@ -39,7 +39,7 @@
             this.lblUsers = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserLoggedIn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlFooter.SuspendLayout();
@@ -54,26 +54,26 @@
             this.menuStripTop});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1293, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1293, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // purchaseToolStripMenuItem
             // 
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
-            this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
+            this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
             this.purchaseToolStripMenuItem.Text = "Purchase";
             // 
             // salesFormsToolStripMenuItem
             // 
             this.salesFormsToolStripMenuItem.Name = "salesFormsToolStripMenuItem";
-            this.salesFormsToolStripMenuItem.Size = new System.Drawing.Size(60, 25);
+            this.salesFormsToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
             this.salesFormsToolStripMenuItem.Text = "Sales";
             // 
             // menuStripTop
             // 
             this.menuStripTop.Name = "menuStripTop";
-            this.menuStripTop.Size = new System.Drawing.Size(90, 25);
+            this.menuStripTop.Size = new System.Drawing.Size(90, 26);
             this.menuStripTop.Text = "Inventory";
             // 
             // lblSHead
@@ -93,7 +93,7 @@
             this.lblAppLName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppLName.Location = new System.Drawing.Point(968, 439);
             this.lblAppLName.Name = "lblAppLName";
-            this.lblAppLName.Size = new System.Drawing.Size(124, 46);
+            this.lblAppLName.Size = new System.Drawing.Size(122, 45);
             this.lblAppLName.TabIndex = 11;
             this.lblAppLName.Text = "STORE";
             // 
@@ -103,7 +103,7 @@
             this.lblAppFName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppFName.Location = new System.Drawing.Point(891, 439);
             this.lblAppFName.Name = "lblAppFName";
-            this.lblAppFName.Size = new System.Drawing.Size(86, 46);
+            this.lblAppFName.Size = new System.Drawing.Size(84, 45);
             this.lblAppFName.TabIndex = 10;
             this.lblAppFName.Text = "ANY";
             // 
@@ -149,16 +149,15 @@
             this.lblFooter.TabIndex = 0;
             this.lblFooter.Text = "Developed By : Akila";
             // 
-            // label1
+            // lblUserLoggedIn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label1.Location = new System.Drawing.Point(65, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 23);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Akila";
+            this.lblUserLoggedIn.AutoSize = true;
+            this.lblUserLoggedIn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserLoggedIn.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblUserLoggedIn.Location = new System.Drawing.Point(65, 49);
+            this.lblUserLoggedIn.Name = "lblUserLoggedIn";
+            this.lblUserLoggedIn.Size = new System.Drawing.Size(0, 23);
+            this.lblUserLoggedIn.TabIndex = 14;
             // 
             // label2
             // 
@@ -175,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1293, 620);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblUserLoggedIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSHead);
             this.Controls.Add(this.lblAppLName);
@@ -189,6 +188,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.frmUserDashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
@@ -211,7 +212,7 @@
         private System.Windows.Forms.Label lblUsers;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Label lblFooter;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserLoggedIn;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,20 @@ namespace AnyStore
 
         private void frmAdminDashboard_Load(object sender, EventArgs e)
         {
-          // var adminDashboard = new frmAdminDashboard();
-           // adminDashboard.Text = " Admin Dashboard - akila ";
+            lblAdminLoggedIn.Text = frmLogin.loggedIn;
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsers user = new frmUsers();
+            user.Show();
+        }
+
+        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.Show();
+            this.Hide();
         }
     }
 }
