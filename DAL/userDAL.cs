@@ -242,6 +242,7 @@ namespace AnyStore.DAL
 
 
         #endregion
+
         #region Geting User ID from username
         public userBLL GetIDFromUsername(string username)
         {

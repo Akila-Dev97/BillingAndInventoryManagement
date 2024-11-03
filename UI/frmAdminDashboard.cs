@@ -35,5 +35,23 @@ namespace AnyStore
             login.Show();
             this.Hide();
         }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories categories = new frmCategories();
+            categories.Show();
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts products = new frmProducts();
+            products.Show();
+        }
+
+        private void dealToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeaCust DeaCust = new frmDeaCust();
+            DeaCust.Show();
+        }
     }
 }
