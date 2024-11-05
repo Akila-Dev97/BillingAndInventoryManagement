@@ -325,5 +325,64 @@ namespace AnyStore.DAL
         }
 
         #endregion
+        #region method to get ID oe thew dealer or Custoimer Based on Name
+        public DeaCustBLL GetDeaCustIDFromName(string Name) 
+        {
+
+
+            //Create an object for deaCustBLL class
+            DeaCustBLL dc = new DeaCustBLL();
+
+            //Create a database caonnection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //Create a data aTable to hold h vlaue Temporiraly
+            DataTable dt = new DataTable();
+
+            try
+            {
+
+                //SQL Query to selct Dealer or customer baes on keyowrds
+                string sql = "SELECT id FROM tbl_dea_cust WHERE name = '"+Name+"'";
+
+
+                //Creating SQL command to excute the Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Getting Data from Database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open Database
+                conn.Open();
+
+                //Paassing value from adpater to data table
+                adapter.Fill(dt);
+
+                //If we have values on dt we need to save it in Dealer Cutomer BLL
+                if (dt.Rows.Count > 0)
+                {
+                    dc.id = int.Parse(dt.Rows[0]["id"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+
+            return dc;
+
+        }
+
+        #endregion
+
+
     }
 }

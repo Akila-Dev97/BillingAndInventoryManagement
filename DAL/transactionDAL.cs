@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace AnyStore.DAL
             {
                 //Writing query to  insert transactions to databse
 
-                string sql = "INSERT INTO tbl_transaction (type, dea_cust_id, grandTotal, transaction_date, tax, discount, added_by) VALUES (@type, @dea_cust_id, @grandTotal, @transaction_date, @tax, @discount, @added_by)";
+                string sql = "INSERT INTO tbl_transactions (type, dea_cust_id, grandTotal, transaction_date, tax, discount, added_by) VALUES (@type, @dea_cust_id, @grandTotal, @transaction_date, @tax, @discount, @added_by); SELECT @@IDENTITY";
 
                 //Creating SQl Command to pass values in our query
 
@@ -85,5 +86,83 @@ namespace AnyStore.DAL
 
         #endregion
 
+        #region Method to display al the trnasaction
+
+        public DataTable DisplayAllTheTransactions()
+        {
+            //Sql Connection First
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            //Create a data table to hold the data from databss etempo
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Write the SQL Query toi DDiplay all trnasctions
+                string sql = "SELECT * FROM tbl_transactions";
+
+                //Sql Comant to excute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SqkData Adpoater to excute Query
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open DataBase connection
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+
+            catch (Exception ex)
+            {
+                    MessageBox.Show(ex.Message);
+
+            }
+                finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        #endregion
+
+        #region Method to display tranaction based on tranaction type
+
+        public DataTable DisplayTransactionByType(string type)
+        {
+            //CreateSQL Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //CreeateDatTable
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Writing SQL Query
+                string sql = "SELECT * FROM tbl_Transactions WHERE type='"+type+"'";
+
+                //SQL command to excute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SQL DatApater to hold dat from Dat base
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open Datbase connection
+                conn.Open();
+                adapter.Fill(dt);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+
+        #endregion
     }
 }

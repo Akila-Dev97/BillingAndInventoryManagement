@@ -41,9 +41,8 @@ namespace AnyStore.DAL
 
                 cmd.Parameters.AddWithValue("@product_id", td.product_id);
                 cmd.Parameters.AddWithValue("@rate", td.rate);
-                cmd.Parameters.AddWithValue("@dea_cust_id", td.dea_cust_id);
-                cmd.Parameters.AddWithValue("@rate", td.rate);
                 cmd.Parameters.AddWithValue("@qty", td.qty);
+                cmd.Parameters.AddWithValue("@total", td.total);
                 cmd.Parameters.AddWithValue("@dea_cust_id", td.dea_cust_id);
                 cmd.Parameters.AddWithValue("@added_date", td.added_date);
                 cmd.Parameters.AddWithValue("@added_by", td.added_by);

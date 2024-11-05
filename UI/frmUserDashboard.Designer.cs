@@ -80,6 +80,7 @@
             this.menuStripTop.Name = "menuStripTop";
             this.menuStripTop.Size = new System.Drawing.Size(69, 20);
             this.menuStripTop.Text = "Inventory";
+            this.menuStripTop.Click += new System.EventHandler(this.menuStripTop_Click);
             // 
             // dealerAndCustomerToolStripMenuItem
             // 

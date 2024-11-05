@@ -58,5 +58,11 @@ namespace AnyStore
             purchase.Show();
             
         }
+
+        private void menuStripTop_Click(object sender, EventArgs e)
+        {
+            frmInventory invnetory = new frmInventory();
+            invnetory.Show();
+        }
     }
 }

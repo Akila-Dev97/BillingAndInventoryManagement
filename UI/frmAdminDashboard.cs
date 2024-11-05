@@ -53,5 +53,17 @@ namespace AnyStore
             frmDeaCust DeaCust = new frmDeaCust();
             DeaCust.Show();
         }
+
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransactions transactions = new frmTransactions();
+            transactions.Show();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventory invnetory = new frmInventory();
+            invnetory.Show();
+        }
     }
 }

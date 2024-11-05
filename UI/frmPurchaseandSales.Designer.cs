@@ -47,7 +47,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.pnlProductDeatils = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.TxtQty = new System.Windows.Forms.TextBox();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.txtRate = new System.Windows.Forms.TextBox();
             this.txtInventory = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.txtVat = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtGrandTotal = new System.Windows.Forms.TextBox();
             this.txtPaidAmount = new System.Windows.Forms.TextBox();
             this.txtReturnAmount = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -265,7 +265,7 @@
             // pnlProductDeatils
             // 
             this.pnlProductDeatils.Controls.Add(this.btnAdd);
-            this.pnlProductDeatils.Controls.Add(this.TxtQty);
+            this.pnlProductDeatils.Controls.Add(this.txtQty);
             this.pnlProductDeatils.Controls.Add(this.txtRate);
             this.pnlProductDeatils.Controls.Add(this.txtInventory);
             this.pnlProductDeatils.Controls.Add(this.txtProductName);
@@ -294,13 +294,13 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // TxtQty
+            // txtQty
             // 
-            this.TxtQty.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtQty.Location = new System.Drawing.Point(923, 39);
-            this.TxtQty.Name = "TxtQty";
-            this.TxtQty.Size = new System.Drawing.Size(73, 25);
-            this.TxtQty.TabIndex = 23;
+            this.txtQty.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.Location = new System.Drawing.Point(923, 39);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(73, 25);
+            this.txtQty.TabIndex = 23;
             // 
             // txtRate
             // 
@@ -501,6 +501,7 @@
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(354, 25);
             this.txtSubTotal.TabIndex = 25;
+            this.txtSubTotal.Text = "0";
             this.txtSubTotal.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtDiscount
@@ -510,6 +511,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(354, 25);
             this.txtDiscount.TabIndex = 32;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtVat
             // 
@@ -518,15 +520,16 @@
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(354, 25);
             this.txtVat.TabIndex = 33;
+            this.txtVat.TextChanged += new System.EventHandler(this.txtVat_TextChanged);
             // 
-            // textBox7
+            // txtGrandTotal
             // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(132, 161);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(354, 25);
-            this.textBox7.TabIndex = 34;
+            this.txtGrandTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGrandTotal.Location = new System.Drawing.Point(132, 161);
+            this.txtGrandTotal.Name = "txtGrandTotal";
+            this.txtGrandTotal.ReadOnly = true;
+            this.txtGrandTotal.Size = new System.Drawing.Size(354, 25);
+            this.txtGrandTotal.TabIndex = 34;
             // 
             // txtPaidAmount
             // 
@@ -535,6 +538,7 @@
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(354, 25);
             this.txtPaidAmount.TabIndex = 35;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             // 
             // txtReturnAmount
             // 
@@ -557,13 +561,14 @@
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlCalculation
             // 
             this.pnlCalculation.Controls.Add(this.btnSave);
             this.pnlCalculation.Controls.Add(this.txtReturnAmount);
             this.pnlCalculation.Controls.Add(this.txtPaidAmount);
-            this.pnlCalculation.Controls.Add(this.textBox7);
+            this.pnlCalculation.Controls.Add(this.txtGrandTotal);
             this.pnlCalculation.Controls.Add(this.txtVat);
             this.pnlCalculation.Controls.Add(this.txtDiscount);
             this.pnlCalculation.Controls.Add(this.txtSubTotal);
@@ -641,7 +646,7 @@
         private System.Windows.Forms.Label lblProductSearch;
         private System.Windows.Forms.Label lblProdcutDetails;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox TxtQty;
+        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.TextBox txtInventory;
         private System.Windows.Forms.TextBox txtProductName;
@@ -659,7 +664,7 @@
         private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.TextBox txtVat;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtGrandTotal;
         private System.Windows.Forms.TextBox txtPaidAmount;
         private System.Windows.Forms.TextBox txtReturnAmount;
         private System.Windows.Forms.Button btnSave;

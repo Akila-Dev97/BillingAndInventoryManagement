@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +82,12 @@
     <Compile Include="UI\frmDeaCust.Designer.cs">
       <DependentUpon>frmDeaCust.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +112,12 @@
     <Compile Include="UI\frmPurchaseandSales.Designer.cs">
       <DependentUpon>frmPurchaseandSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTransactions.Designer.cs">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +138,9 @@
     <EmbeddedResource Include="UI\frmDeaCust.resx">
       <DependentUpon>frmDeaCust.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmPurchaseandSales.resx">
       <DependentUpon>frmPurchaseandSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTransactions.resx">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmUserDashboard.resx">
       <DependentUpon>frmUserDashboard.cs</DependentUpon>

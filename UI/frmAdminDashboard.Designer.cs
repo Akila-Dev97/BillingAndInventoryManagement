@@ -36,12 +36,12 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsers = new System.Windows.Forms.Label();
             this.lblAdminLoggedIn = new System.Windows.Forms.Label();
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblAppLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
-            this.dealToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -112,12 +112,21 @@
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
             this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // transactionsToolStripMenuItem
             // 
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.transactionsToolStripMenuItem.Text = "Transactions";
+            this.transactionsToolStripMenuItem.Click += new System.EventHandler(this.transactionsToolStripMenuItem_Click);
+            // 
+            // dealToolStripMenuItem
+            // 
+            this.dealToolStripMenuItem.Name = "dealToolStripMenuItem";
+            this.dealToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
+            this.dealToolStripMenuItem.Text = "Dealer and Customerl";
+            this.dealToolStripMenuItem.Click += new System.EventHandler(this.dealToolStripMenuItem_Click);
             // 
             // lblUsers
             // 
@@ -174,13 +183,6 @@
             this.lblSHead.Size = new System.Drawing.Size(311, 25);
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Billing and Inventory Management";
-            // 
-            // dealToolStripMenuItem
-            // 
-            this.dealToolStripMenuItem.Name = "dealToolStripMenuItem";
-            this.dealToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
-            this.dealToolStripMenuItem.Text = "Dealer and Customerl";
-            this.dealToolStripMenuItem.Click += new System.EventHandler(this.dealToolStripMenuItem_Click);
             // 
             // frmAdminDashboard
             // 
