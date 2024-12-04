@@ -44,9 +44,6 @@ The **Billing and Inventory Management System** is a comprehensive application d
 - **Framework**: .NET Framework  
 - **Data Access**: ADO.NET  
 
-## Screenshots (Optional)
-_Add screenshots of your application here to showcase the interface._
-
 ## Installation
 
 1. **Clone the Repository**
